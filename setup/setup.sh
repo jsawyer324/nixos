@@ -18,6 +18,8 @@ sudo mount -L NIXOS /mnt
 sudo swapon -L NIXSWAP
 sudo mount --mkdir -L NIXBOOT /mnt/boot
 
+sudo lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS,LABEL
+
 sleep 2
 
 #config
@@ -26,6 +28,7 @@ sudo nixos-generate-config --root /mnt
 sleep 2
 
 #copy
+sudo rm /mnt/etc/nixos/
 sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
 sudo cp ../flake.nix /mnt/etc/nixos/flake.nix
 sudo cp ../home.nix /mnt/etc/nixos/home.nix
@@ -40,7 +43,7 @@ sleep 2
 
 #install
 #cd /mnt || exit
-sudo nixos-install --flake /mnt/etc/nixos#testnix01 --show-trace
+#sudo nixos-install --flake /mnt/etc/nixos#testnix01
 #sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now
