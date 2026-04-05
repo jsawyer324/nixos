@@ -5,6 +5,7 @@
     [
       ./hosts/qemu-vm.nix
       ./modules/git
+      ./modules/qemu.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -38,23 +39,12 @@
   };
 
   programs.firefox.enable = true;
-    
-  # programs.git = {
-  #   enable = true;
-  #   config = {
-  #     user.name = "James Sawyer";
-  #     user.email = "jsawyer324@gmail.com";
-  #   };
-  # };
-
-  services.spice-vdagentd.enable = true;
-  services.qemuGuest.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
     wget
+    nano
     alacritty
-    # git
     obsidian
     _1password-cli
     _1password-gui
