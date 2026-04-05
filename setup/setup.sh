@@ -24,12 +24,11 @@ sudo mount --mkdir -L NIXBOOT /mnt/boot
 #config
 sudo nixos-generate-config --root /mnt
 
-Exit
-
 #copy
 sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
 sudo cp ../flake.nix /mnt/etc/nixos/flake.nix
 sudo cp ../home.nix /mnt/etc/nixos/home.nix
+sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
 #sudo cp -r ./ovpn /mnt/etc/nixos/
 
 #edit hostname
