@@ -56,8 +56,8 @@
     alacritty
     # git
     obsidian
-    _1password
-    _1password-git
+    _1password-cli
+    _1password-gui
     pianobar
     session-desktop
     vlc
