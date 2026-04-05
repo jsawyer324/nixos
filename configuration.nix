@@ -67,6 +67,7 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";
 
