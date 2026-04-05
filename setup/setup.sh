@@ -4,8 +4,8 @@
 #read -rp "Enter hostname: " HOSTNAME
 
 #partition disk
-sudo sgdisk -n 1::+1G /dev/vda -t 1:ef00
-sudo sgdisk -n 2::+4G /dev/vda -t 2:8200
+sudo sgdisk -n 1::+512M /dev/vda -t 1:ef00
+sudo sgdisk -n 2::+2G /dev/vda -t 2:8200
 sudo sgdisk -n 3:: /dev/vda 
 
 #format and label
@@ -39,4 +39,4 @@ sudo nix flake update --extra-experimental-features "nix-command flakes"
 
 sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
-#reboot now
+reboot now
