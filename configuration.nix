@@ -19,7 +19,7 @@
     enable = true;
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
-    #windowManager.qtile.enable = true;
+    windowManager.qtile.enable = true;
     desktopManager.xfce.enable = true;
   };
 

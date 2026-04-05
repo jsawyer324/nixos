@@ -9,7 +9,7 @@
     enable = true;
     shellAliases = {
       ll = "ls -lah --color=auto";
-      tbag = "echo tbag";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#testnix01";
     };
   };
 }
