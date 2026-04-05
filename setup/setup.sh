@@ -35,7 +35,7 @@ sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
 #install
 cd /mnt/etc/nixos || exit
 
-sudo nixos-install --flake /mnt/etc/nixos#testnix01 >> /mnt/etc/nixos/output
+sudo nixos-install --flake /mnt/etc/nixos#testnix01 2> /mnt/etc/nixos/output
 #sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now
