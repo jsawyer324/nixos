@@ -27,21 +27,21 @@
     initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
-      # tree
+      tree
     ];
   };
 
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # vim
-    # wget
-    # alacritty
-    # git
+    vim
+    wget
+    alacritty
+    git
   ];
 
   fonts.packages = with pkgs; [
-    #nerd-fonts.jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
