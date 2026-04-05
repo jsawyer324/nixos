@@ -13,12 +13,12 @@ sudo sgdisk -n 3:: /dev/vda
 
 #format and label
 sudo mkfs.fat -F 32 -n NIXBOOT /dev/vda1
-sudo mkswap -L swap /dev/vda2
+sudo mkswap -L NIXSWAP /dev/vda2
 sudo mkfs.ext4 -L NIXOS /dev/vda3
 
 #mount and activate swap by label
 sudo mount -L NIXOS /mnt
-sudo swapon -L swap
+sudo swapon -L NIXSWAP
 sudo mount --mkdir -L NIXBOOT /mnt/boot
 
 #config
