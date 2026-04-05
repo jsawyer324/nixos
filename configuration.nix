@@ -4,7 +4,7 @@
   imports =
     [
       ./hosts/qemu-vm.nix
-      ./modules/git/
+      ./modules/git
     ];
 
   boot.loader.systemd-boot.enable = true;
