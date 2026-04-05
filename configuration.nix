@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
+      ./hosts/qemu-vm.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

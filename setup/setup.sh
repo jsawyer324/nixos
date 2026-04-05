@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #input hostname
-read -rp "Enter hostname: " HOSTNAME
+#read -rp "Enter hostname: " HOSTNAME
 
 #input cifs password
-read -rp "Enter cifs password: " CIFSPASS
+#read -rp "Enter cifs password: " CIFSPASS
 
 #partition disk
 sudo sgdisk -n 1::+512M /dev/vda -t 1:ef00
@@ -27,17 +27,19 @@ sudo nixos-generate-config --root /mnt
 Exit
 
 #copy
-sudo cp ./configuration_1.nix /mnt/etc/nixos/configuration.nix
-sudo cp -r ./ovpn /mnt/etc/nixos/
+sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
+sudo cp ../flake.nix /mnt/etc/nixos/flake.nix
+sudo cp ../home.nix /mnt/etc/nixos/home.nix
+#sudo cp -r ./ovpn /mnt/etc/nixos/
 
 #edit hostname
-sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
+#sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
 
 #edit cifspassword
-sed -i "s/cifs_password/$CIFSPASS/g" /mnt/etc/nixos/configuration.nix
+#sed -i "s/cifs_password/$CIFSPASS/g" /mnt/etc/nixos/configuration.nix
 
 #install
 cd /mnt || exit
-sudo nixos-install
+sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 reboot now
