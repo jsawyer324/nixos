@@ -6,8 +6,8 @@
       ./hosts/qemu-vm.nix
       ./modules/users
       ./modules/packages
-      ./modules/git
       ./modules/qemu
+      ./modules/de/i3.nix
 
     ];
 
@@ -19,14 +19,14 @@
 
   time.timeZone = "America/Chicago";
 
-  services.displayManager.ly.enable = true;
-  services.xserver = {
-    enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-    windowManager.qtile.enable = true;
-    desktopManager.xfce.enable = true;
-  };
+  # services.displayManager.ly.enable = true;
+  # services.xserver = {
+  #   enable = true;
+  #   autoRepeatDelay = 200;
+  #   autoRepeatInterval = 35;
+  #   windowManager.qtile.enable = true;
+  #   desktopManager.xfce.enable = true;
+  # };
 
   
 

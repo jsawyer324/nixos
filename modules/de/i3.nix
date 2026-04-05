@@ -1,15 +1,11 @@
 {config, pkgs, lib, ...}:
 
-with lib;
-
 {
   imports = [
     #../hardware/sound.nix
     #../hardware/bluetooth.nix
     #../general
     #../file/thunar.nix
-    #../web/firefox.nix
-    #../git
   ];
 
   services = {
