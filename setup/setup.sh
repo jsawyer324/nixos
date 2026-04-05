@@ -18,12 +18,12 @@ sudo mount -L NIXOS /mnt
 sudo swapon -L NIXSWAP
 sudo mount --mkdir -L NIXBOOT /mnt/boot
 
-sleep 1
+sleep 2
 
 #config
 sudo nixos-generate-config --root /mnt
 
-sleep 1
+sleep 2
 
 #copy
 sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
@@ -33,13 +33,14 @@ sudo mkdir -p /mnt/etc/nixos/hosts
 sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
 #sudo cp -r ./ovpn /mnt/etc/nixos/
 
-sleep 1
+sleep 2
 
 #edit hostname
 #sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
 
 #install
-cd /mnt || exit
-sudo nixos-install --flake /mnt/etc/nixos#testnix01
+#cd /mnt || exit
+sudo nixos-install --flake /mnt/etc/nixos#testnix01 --show-trace
+#sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now
