@@ -18,14 +18,8 @@ sudo mount -L NIXOS /mnt
 sudo swapon -L NIXSWAP
 sudo mount --mkdir -L NIXBOOT /mnt/boot
 
-sudo lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS,LABEL
-
-sleep 2
-
 #config
 sudo nixos-generate-config --root /mnt
-
-sleep 2
 
 #copy
 sudo rm /mnt/etc/nixos/*
@@ -35,16 +29,13 @@ sudo cp ../home.nix /mnt/etc/nixos/home.nix
 sudo mkdir -p /mnt/etc/nixos/hosts
 sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
 
-sleep 2
-
 #edit hostname
 #sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
 
 #install
-cd /mnt || exit
+cd /mnt/etc/nixos || exit
 
-sleep 2
-sudo nixos-install --flake path:/mnt/etc/nixos#testnix01 --extra-experimental-features 'nix-command flakes'
+#sudo nixos-install --flake path:/mnt/etc/nixos#testnix01
 #sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now
