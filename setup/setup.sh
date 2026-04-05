@@ -28,13 +28,12 @@ sudo nixos-generate-config --root /mnt
 sleep 2
 
 #copy
-sudo rm /mnt/etc/nixos/
+sudo rm /mnt/etc/nixos/*
 sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
 sudo cp ../flake.nix /mnt/etc/nixos/flake.nix
 sudo cp ../home.nix /mnt/etc/nixos/home.nix
 sudo mkdir -p /mnt/etc/nixos/hosts
 sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
-#sudo cp -r ./ovpn /mnt/etc/nixos/
 
 sleep 2
 
@@ -42,7 +41,7 @@ sleep 2
 #sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
 
 #install
-#cd /mnt || exit
+cd /mnt || exit
 #sudo nixos-install --flake /mnt/etc/nixos#testnix01
 #sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
