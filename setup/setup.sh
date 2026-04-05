@@ -3,9 +3,6 @@
 #input hostname
 #read -rp "Enter hostname: " HOSTNAME
 
-#input cifs password
-#read -rp "Enter cifs password: " CIFSPASS
-
 #partition disk
 sudo sgdisk -n 1::+512M /dev/vda -t 1:ef00
 sudo sgdisk -n 2::+2G /dev/vda -t 2:8200
@@ -21,8 +18,12 @@ sudo mount -L NIXOS /mnt
 sudo swapon -L NIXSWAP
 sudo mount --mkdir -L NIXBOOT /mnt/boot
 
+sleep 1
+
 #config
 sudo nixos-generate-config --root /mnt
+
+sleep 1
 
 #copy
 sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
@@ -32,11 +33,10 @@ sudo mkdir -p /mnt/etc/nixos/hosts
 sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
 #sudo cp -r ./ovpn /mnt/etc/nixos/
 
+sleep 1
+
 #edit hostname
 #sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
-
-#edit cifspassword
-#sed -i "s/cifs_password/$CIFSPASS/g" /mnt/etc/nixos/configuration.nix
 
 #install
 cd /mnt || exit
