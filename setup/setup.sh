@@ -39,7 +39,7 @@ sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
 #sed -i "s/cifs_password/$CIFSPASS/g" /mnt/etc/nixos/configuration.nix
 
 #install
-#cd /mnt || exit
-#sudo nixos-install --flake /mnt/etc/nixos#testnix01
+cd /mnt || exit
+sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now
