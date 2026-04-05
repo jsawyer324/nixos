@@ -38,6 +38,5 @@ cd /mnt/etc/nixos || exit
 sudo nix flake update --extra-experimental-features "nix-command flakes"
 
 sudo nixos-install --flake /mnt/etc/nixos#testnix01
-#sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now

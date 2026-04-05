@@ -31,6 +31,10 @@
     ];
   };
 
+  users.users.root = {
+    hashedPassword = "$y$j9T$abktyaspdhcRsi53hqJR0/$jHPD6ekeQ85IzM84dXWGAhAA7kghWM4qQaY7B.SltL3";
+  };
+
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
