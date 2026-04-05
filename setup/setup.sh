@@ -28,12 +28,12 @@ sudo nixos-generate-config --root /mnt
 sleep 2
 
 #copy
-#sudo rm /mnt/etc/nixos/*
-#sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
-#sudo cp ../flake.nix /mnt/etc/nixos/flake.nix
-#sudo cp ../home.nix /mnt/etc/nixos/home.nix
-#sudo mkdir -p /mnt/etc/nixos/hosts
-#sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
+sudo rm /mnt/etc/nixos/*
+sudo cp ../configuration.nix /mnt/etc/nixos/configuration.nix
+sudo cp ../flake.nix /mnt/etc/nixos/flake.nix
+sudo cp ../home.nix /mnt/etc/nixos/home.nix
+sudo mkdir -p /mnt/etc/nixos/hosts
+sudo cp ../hosts/qemu-vm.nix /mnt/etc/nixos/hosts/qemu-vm.nix
 
 sleep 2
 
@@ -44,7 +44,7 @@ sleep 2
 cd /mnt || exit
 
 
-#sudo nixos-install --flake /mnt/etc/nixos#testnix01
+sudo nixos-install --extra-experimental-features 'nix-command flakes' --flake /mnt/etc/nixos#testnix01
 #sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now
