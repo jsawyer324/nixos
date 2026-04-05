@@ -43,9 +43,8 @@ sleep 2
 #install
 cd /mnt || exit
 
-export NIX_CONFIG="experimental-features = nix-command flakes"
 sleep 2
-sudo nixos-install --flake /mnt/etc/nixos#testnix01
+sudo nixos-install --flake path:/mnt/etc/nixos#testnix01 --extra-experimental-features 'nix-command flakes'
 #sudo nixos-install --flake /mnt/etc/nixos#testnix01
 
 #reboot now
