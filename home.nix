@@ -4,7 +4,7 @@
   home.username = "james";
   home.homeDirectory = "/home/james";
 
-  # home.file.".config/i3".source = ./config/i3;
+  home.file.".config/i3/config".source = ./config/i3/config;
   home.file.".config/polybar/config".source = ./config/polybar/config;
   # home.file.".config/kitty".source = ./config/kitty;
 
