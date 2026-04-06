@@ -1,12 +1,20 @@
 { config, pkgs, ... }:
 
+let
+  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+
+  # Standard .config/directory
+  configs = {
+    i3 = "i3";
+    kitty = "kitty";
+    polybar = "polybar";
+  };
+in
+
 {
   home.username = "james";
   home.homeDirectory = "/home/james";
-
-  home.file.".config/i3/config".source = ./config/i3/config;
-  home.file.".config/polybar/config".source = ./config/polybar/config;
-  # home.file.".config/kitty".source = ./config/kitty;
 
   programs.git = {
     enable = true;
@@ -19,6 +27,13 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#testnix01";
     };
   };
+
+  xdg.configFile = builtins.mapAttrs
+    (name: subpath: {
+      source = create_symlink "${dotfiles}/${subpath}";
+      recursive = true;
+    })
+    configs;
 
   home.stateVersion = "25.11";
 }
