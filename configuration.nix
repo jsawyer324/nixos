@@ -19,17 +19,6 @@
 
   time.timeZone = "America/Chicago";
 
-  # services.displayManager.ly.enable = true;
-  # services.xserver = {
-  #   enable = true;
-  #   autoRepeatDelay = 200;
-  #   autoRepeatInterval = 35;
-  #   windowManager.qtile.enable = true;
-  #   desktopManager.xfce.enable = true;
-  # };
-
-  
-
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";
