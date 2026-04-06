@@ -44,6 +44,8 @@
       ranger
       lf
       pavucontrol
+      mpd
+      killall
     ];
   };
 
