@@ -9,6 +9,7 @@ let
     i3 = "i3";
     kitty = "kitty";
     polybar = "polybar";
+    mpd = "mpd";
   };
 in
 
