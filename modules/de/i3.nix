@@ -46,6 +46,7 @@
       pavucontrol
       mpd
       killall
+      kitty
     ];
   };
 
